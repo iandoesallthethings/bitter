@@ -1,7 +1,7 @@
 import type { NewBeet } from '$types'
 import db from '$lib/db'
 import { beets } from '$lib/db/schema'
-import { desc, isNull } from 'drizzle-orm'
+import { desc, eq, isNull } from 'drizzle-orm'
 
 export async function create(newBeet: NewBeet) {
 	return db.insert(beets).values(newBeet).returning()
@@ -15,6 +15,16 @@ export async function getFeed() {
 		},
 		orderBy: [desc(beets.createdAt)],
 		where: isNull(beets.parentId),
+	})
+}
+
+export async function getById(id: number) {
+	return await db.query.beets.findFirst({
+		with: {
+			author,
+			children,
+		},
+		where: eq(beets.id, id),
 	})
 }
 

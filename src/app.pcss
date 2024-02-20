@@ -35,15 +35,20 @@ h5 {
 	@apply text-lg;
 }
 
-a {
+a,
+button.link-button {
 	@apply text-beet;
 }
 
-button {
-	@apply w-min rounded bg-beet fill-cream px-2 text-cream shadow;
+button:not(.link-button) {
+	@apply w-min whitespace-nowrap rounded bg-beet fill-cream px-2 text-cream shadow;
 }
 
 input,
 textarea {
 	@apply rounded bg-ivory p-2 outline-none;
+}
+
+* {
+	@apply border-gunmetal/20;
 }

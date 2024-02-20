@@ -9,10 +9,4 @@
 
 {#each data.beets as beet}
 	<BeetCard {beet} />
-
-	<div class="border-l pl-4">
-		{#each beet.children as child}
-			<BeetCard beet={child} />
-		{/each}
-	</div>
 {/each}

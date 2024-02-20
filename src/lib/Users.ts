@@ -1,4 +1,4 @@
-import type { NewUser } from '$types'
+import type { NewUser, User } from '$types'
 import * as Bun from 'bun'
 import { eq } from 'drizzle-orm'
 import db from '$lib/db'
@@ -17,11 +17,18 @@ export async function create(newUser: NewUser) {
 		.returning()
 }
 
+export async function getByUsername(username: string, includePassword = false) {
+	return (await db.query.users.findFirst({
+		where: eq(users.username, username),
+		columns: { password: includePassword },
+	})) as User
+}
+
 export async function getByEmail(email: string, includePassword = false) {
-	return await db.query.users.findFirst({
+	return (await db.query.users.findFirst({
 		where: eq(users.email, email),
 		columns: { password: includePassword },
-	})
+	})) as User
 }
 
 export async function checkPassword(email: string, password: string) {

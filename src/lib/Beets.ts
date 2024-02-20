@@ -28,6 +28,17 @@ export async function getById(id: number) {
 	})
 }
 
+export async function getByUserId(userId: number) {
+	return await db.query.beets.findMany({
+		with: {
+			author,
+			children,
+		},
+		orderBy: [desc(beets.createdAt)],
+		where: eq(beets.authorId, userId),
+	})
+}
+
 const author = {
 	columns: { password: false },
 }

@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1708316168559,
+      "tag": "0000_fixed_bushwacker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1708316426354,
+      "tag": "0001_faithful_true_believers",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708318290639,
+      "tag": "0002_daffy_stark_industries",
+      "breakpoints": true
+    }
+  ]
+}

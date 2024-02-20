@@ -1,4 +1,49 @@
 /* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+body {
+	@apply border-gunmetal bg-ivory text-gunmetal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	@apply fill-beet text-beet;
+}
+
+h1 {
+	@apply text-4xl;
+}
+
+h2 {
+	@apply text-3xl;
+}
+
+h3 {
+	@apply text-2xl;
+}
+
+h4 {
+	@apply text-xl;
+}
+
+h5 {
+	@apply text-lg;
+}
+
+a {
+	@apply text-beet;
+}
+
+button {
+	@apply w-min rounded bg-beet fill-cream px-2 text-cream shadow;
+}
+
+input,
+textarea {
+	@apply rounded bg-ivory p-2 outline-none;
+}

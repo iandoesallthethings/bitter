@@ -1,0 +1,1 @@
+ALTER TABLE "beets" ADD COLUMN "message" text NOT NULL;

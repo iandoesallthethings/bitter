@@ -20,7 +20,7 @@
 	use:enhance={post}
 	method="POST"
 	action="/beets?/post"
-	class="relative flex flex-col rounded border bg-ivory"
+	class="relative flex w-full flex-col rounded border bg-ivory"
 >
 	<input type="hidden" name="authorId" value={1} />
 	<input type="hidden" name="parentId" value={parentId} />
@@ -30,7 +30,7 @@
 		name="message"
 		rows="3"
 		placeholder="What's on your mind?"
-		class="min-h-24"
+		class="min-h-24 w-full"
 		required
 	/>
 

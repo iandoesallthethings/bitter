@@ -3,6 +3,7 @@
 	import * as Dates from '$lib/Dates'
 	import BeetComposer from '$lib/BeetComposer.svelte'
 	import Icon from './Icon.svelte'
+	import Avatar from './Avatar.svelte'
 
 	interface Props {
 		beet: Beet
@@ -18,9 +19,7 @@
 	<div class="relative flex flex-row items-start gap-2">
 		<a href="/beets/{beet.id}" class="link-to-beet absolute h-full w-full">&nbsp;</a>
 
-		<a href="/{beet.author.username}" class="h-10 w-10 overflow-hidden rounded-full border">
-			<Icon name="faUser" class="h-full w-full" />
-		</a>
+		<Avatar user={beet.author} />
 
 		<div class="relative flex flex-col">
 			<p>

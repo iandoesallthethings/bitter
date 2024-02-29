@@ -3,7 +3,7 @@
 	import '../app.pcss'
 </script>
 
-<nav class="p-4">
+<nav class="flex flex-row justify-between p-4">
 	<a href="/">
 		<h1>
 			<Icon name="biBeet" class="inline-block w-6 md:w-4" />

@@ -9,10 +9,7 @@ export async function create(newBeet: NewBeet) {
 
 export async function getFeed() {
 	return await db.query.beets.findMany({
-		with: {
-			author,
-			children,
-		},
+		with: { author, children },
 		orderBy: [desc(beets.createdAt)],
 		where: isNull(beets.parentId),
 	})
@@ -20,20 +17,14 @@ export async function getFeed() {
 
 export async function getById(id: number) {
 	return await db.query.beets.findFirst({
-		with: {
-			author,
-			children,
-		},
+		with: { author, children },
 		where: eq(beets.id, id),
 	})
 }
 
 export async function getByUserId(userId: number) {
 	return await db.query.beets.findMany({
-		with: {
-			author,
-			children,
-		},
+		with: { author, children },
 		orderBy: [desc(beets.createdAt)],
 		where: eq(beets.authorId, userId),
 	})

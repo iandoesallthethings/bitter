@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Beet } from '$types'
+	import type { Beet, BeetWithRelations } from '$types'
 	import * as Dates from '$lib/Dates'
 	import BeetComposer from '$lib/BeetComposer.svelte'
 	import Icon from './Icon.svelte'
 	import Avatar from './Avatar.svelte'
 
 	interface Props {
-		beet: Beet
+		beet: BeetWithRelations
 	}
 
 	let { beet } = $props<Props>()
@@ -15,7 +15,7 @@
 	let showReplies = $state(false)
 </script>
 
-{#snippet card(beet: Beet)}
+{#snippet card(beet: BeetWithRelations)}
 	<div class="relative flex flex-row items-start gap-2">
 		<a href="/beets/{beet.id}" class="link-to-beet absolute h-full w-full">&nbsp;</a>
 
@@ -35,7 +35,7 @@
 			<p>{beet.message}</p>
 
 			<div class="controls flex flex-row gap-2 py-2">
-				<button>
+				<button disabled>
 					<Icon name="faHeart" /> like
 				</button>
 
@@ -47,7 +47,7 @@
 					{/if}
 				</button>
 
-				<button on:click={() => {}} class="whitespace-nowrap">
+				<button class="whitespace-nowrap" disabled>
 					<Icon name="biBeet" class="inline-block w-2" /> rebeet
 				</button>
 			</div>
